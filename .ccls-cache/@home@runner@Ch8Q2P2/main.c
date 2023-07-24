@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+// Declare functions
+int calculateTriangularNumber (int);
+
 int main(void) {
 
   int n, number, triangularNumber, counter;
@@ -11,11 +14,24 @@ int main(void) {
 
       triangularNumber = 0;
 
-      for (n = 1; n<=number; n++)
-        triangularNumber += n;
+      triangularNumber = calculateTriangularNumber (number);
 
       printf ("Triangular number %i is %i\n\n", number, triangularNumber);
   }
   
   return 0;
+}
+
+// Define functions
+int calculateTriangularNumber (int number) {
+  // Initialize triangular number
+  int triangularNumber = 0;
+
+  // Calculate triangular number
+  for (int i = 1; i <= number; i++) {
+    triangularNumber += i;
+  }
+
+  // Return triangular number
+  return triangularNumber;
 }
